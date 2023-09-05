@@ -72,8 +72,16 @@ module mux(
     input isel,
     output reg oout
     );
-     always@(*)
-         oout <= isel ? ia : ib;
+
+always @(*) begin
+    if (isel == 0) begin
+        oout = ia;
+    end
+    else begin
+        oout = ib;
+    end
+end
+
 endmodule
 module dff(
     input id,
