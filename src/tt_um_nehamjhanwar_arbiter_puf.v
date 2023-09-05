@@ -22,8 +22,10 @@ module tt_um_nehamjhanwar_arbiter_puf  (
 wire ipulse = clk;                    // Define signals to connect
 wire [7:0] ichallenge;
 wire oresponse; // Assuming 'oresponse' is a one-bit signal
-assign oresponse = uo_out[0]; // Select the least significant bit (LSB) of uo_out
-
+	assign oresponse = uio_out[0]; // Select the least significant bit (LSB) of uio_out
+assign uo_out = 0;
+assign uio_oe = 0;
+assign uio_out[7:1] = 0;
 
 
 // Assignments
