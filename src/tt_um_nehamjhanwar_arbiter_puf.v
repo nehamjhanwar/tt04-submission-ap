@@ -25,7 +25,7 @@ wire oresponse;
 
 // Assignments
 assign uo_out[7] = oresponse;   // Connect arbiterpuf response to uo_out[7]
-assign uio_in[7:0] = [7:0] ichallenge;      // Connect ichallenge to uio_in
+	assign uio_in[7:0] = ichallenge[7:0];      // Connect ichallenge to uio_in
     
     arbiterpuf arb_inst (
         `ifdef USE_POWER_PINS
