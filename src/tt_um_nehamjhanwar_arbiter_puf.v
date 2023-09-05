@@ -27,11 +27,11 @@ assign oresponse = uo_out[0]; // Select the least significant bit (LSB) of uo_ou
 
 
 // Assignments
-//assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
+	//assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
 	assign ichallenge[7:0] = uio_in[7:0];      // Connect ichallenge to uio_in
-	assign ui_in[7:0] = 0;
-	assign ena = 0;
-	assign rst_n = 0;
+	//assign ui_in[7:0] = 0;
+	//assign ena = 0;
+	//assign rst_n = 0;
     
     arbiterpuf arb_inst (
         `ifdef USE_POWER_PINS
