@@ -24,7 +24,7 @@ wire [7:0] ichallenge;
 wire oresponse;
 
 // Assignments
-assign oresponse = uo_out[7];   // Connect arbiterpuf response to uo_out[7]
+assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
 	assign ichallenge[7:0] = uio_in[7:0];      // Connect ichallenge to uio_in
     
     arbiterpuf arb_inst (
