@@ -49,7 +49,24 @@ endmodule
 	
 //`timescale 1ns / 1ps
 
-module arbiterpuf(
+module arbiter_m_top(
+
+     input ipulse,
+     input[7:0] ichallenges,
+     output[7:0] oresponse
+ );
+  genvar i;
+ generate
+ begin
+	 for(i=0;i<=6;i=i+1) 
+ begin :inst
+ arbiterpuf_1 a1(.ipulse(ipulse),.ichallenges(ichallenges),.oresponse(oresponse[i]));
+ end
+ end
+ endgenerate
+
+endmodule
+module arbiterpuf_1(
 `ifdef USE_POWER_PINS
 	inout vccd1,	// User area 1 1.8V power
 	inout vssd1,	// User area 1 digital ground
