@@ -52,7 +52,10 @@ endmodule
 //`timescale 1ns / 1ps
 
 module arbiterpuf(
-
+`ifdef USE_POWER_PINS
+	inout vccd1,	// User area 1 1.8V power
+	inout vssd1,	// User area 1 digital ground
+`endif
      input ipulse,
      input [7:0] ichallenge,
      output [7:0] oresponse
@@ -60,7 +63,7 @@ module arbiterpuf(
  genvar i;
  generate
  begin
-	 for(i=0;i<=6;i=i+1) 
+	 for(i=0;i<=7;i=i+1) 
  begin :inst
  arbiterpuf_1 a1(.ipulse(ipulse),.ichallenge(ichallenge),.oresponse(oresponse[i]));
  end
@@ -69,10 +72,7 @@ module arbiterpuf(
 
 endmodule
 module arbiterpuf_1(
-`ifdef USE_POWER_PINS
-	inout vccd1,	// User area 1 1.8V power
-	inout vssd1,	// User area 1 digital ground
-`endif
+
 	input ipulse,
 	input [7:0] ichallenge,
 	output oresponse
