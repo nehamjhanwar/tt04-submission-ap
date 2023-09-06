@@ -21,13 +21,13 @@ module tt_um_nehamjhanwar_arbiter_puf  (
     // Declare internal signals
 wire ipulse = clk;                    // Define signals to connect
 wire [7:0] ichallenge;
-//wire [7:0] oresponse = uo_out; // Assuming 'oresponse' is a seven-bit signal
+wire [7:0] oresponse = uo_out; // Assuming 'oresponse' is a seven-bit signal
 //assign oresponse = uio_out[0]; // Select the least significant bit (LSB) of uio_out
 //assign uo_out = 0;
 assign uio_oe = 0;
 assign uio_out[7:0] = 0;
 //assign uio_out[7:1] = 0;
-assign oresponse = uo_out;
+//assign oresponse = uo_out;
 
 // Assignments
 	//assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
