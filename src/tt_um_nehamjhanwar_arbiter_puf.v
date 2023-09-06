@@ -52,7 +52,7 @@ endmodule
 module arbiterpuf(
 
      input ipulse,
-     input[7:0] ichallenges,
+     input[7:0] ichallenge,
      output[7:0] oresponse
  );
  genvar i;
@@ -60,7 +60,7 @@ module arbiterpuf(
  begin
 	 for(i=0;i<=6;i=i+1) 
  begin :inst
- arbiterpuf_1 a1(.ipulse(ipulse),.ichallenges(ichallenges),.oresponse(oresponse[i]));
+ arbiterpuf_1 a1(.ipulse(ipulse),.ichallenge(ichallenge),.oresponse(oresponse[i]));
  end
  end
  endgenerate
