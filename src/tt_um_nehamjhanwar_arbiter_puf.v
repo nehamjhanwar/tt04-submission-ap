@@ -26,7 +26,7 @@ wire [7:0] oresponse; // Assuming 'oresponse' is a seven-bit signal
 assign uo_out = 0;
 assign uio_oe = 0;
 //assign uio_out[7:1] = 0;
- assign uio_out = oresponse[7:0];
+ assign oresponse = uio_out;
 
 // Assignments
 	//assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
@@ -52,8 +52,8 @@ endmodule
 module arbiterpuf(
 
      input ipulse,
-     input[7:0] ichallenge,
-     output[7:0] oresponse
+     input [7:0] ichallenge,
+     output [7:0] oresponse
  );
  genvar i;
  generate
@@ -72,7 +72,7 @@ module arbiterpuf_1(
 	inout vssd1,	// User area 1 digital ground
 `endif
 	input ipulse,
-	input[7:0] ichallenge,
+	input [7:0] ichallenge,
 	output oresponse
     );
     wire odelay_line_oout_1;
