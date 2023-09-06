@@ -30,7 +30,7 @@ assign uio_out[7:1] = 0;
 
 // Assignments
 	//assign oresponse = uo_out;   // Connect arbiterpuf response to uo_out[7]
-	assign ichallenge[7:0] = uio_in[7:0];      // Connect ichallenge to uio_in
+	assign ichallenge = uio_in;      // Connect ichallenge to uio_in
 	//assign ui_in[7:0] = 0;
 	//assign ena = 0;
 	//assign rst_n = 0;
