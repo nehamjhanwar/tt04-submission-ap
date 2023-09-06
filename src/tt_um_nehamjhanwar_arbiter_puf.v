@@ -33,7 +33,7 @@ assign ichallenge = ui_in;      // Connect ichallenge to uio_in
 
 	
 	
-	assign uio_in = 0;
+	//assign uio_in = 0;
 	//assign ena = 0;
 	//assign rst_n = 0;
     
