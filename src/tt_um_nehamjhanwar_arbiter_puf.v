@@ -23,17 +23,17 @@ wire ipulse = clk;                    // Define signals to connect
 wire [7:0] ichallenge;
 wire [7:0] oresponse; // Assuming 'oresponse' is a seven-bit signal
 //assign oresponse = uio_out[0]; // Select the least significant bit (LSB) of uio_out
-assign uo_out = 0;
+assign uio_out = 0;
 assign uio_oe = 0;
 //assign uio_out[7:0] = 0;
 //assign uio_out[7:1] = 0;
 	// Assignments
-assign uio_out = oresponse;   // Connect arbiterpuf response to uo_out[7]
-assign ichallenge = uio_in;      // Connect ichallenge to uio_in
+assign uo_out = oresponse;   // Connect arbiterpuf response to uo_out[7]
+assign ichallenge = ui_in;      // Connect ichallenge to uio_in
 
 	
 	
-	//assign ui_in[7:0] = 0;
+	assign uio_in = 0;
 	//assign ena = 0;
 	//assign rst_n = 0;
     
