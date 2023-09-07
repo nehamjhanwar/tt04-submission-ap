@@ -119,7 +119,7 @@ module dff(
 	assign out1 = ~iclk ? id : out1;
 	// Positive-edge-triggered flip-flop
 	always @(posedge iclk) begin
-        oq <= out1; // Update q on the rising edge of clk
+        oq <= id; // Update q on the rising edge of clk
     end
 	//assign oq = iclk ? oq : out1;
    // always @ (posedge iclk)  
