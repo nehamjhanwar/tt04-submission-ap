@@ -115,11 +115,13 @@ module dff(
     input iclk,
     output reg oq
     );
-    
-    always @ (posedge iclk)  
-    begin 
-   oq <= id;
-   end
+    wire out1;
+	assign out1 = ~iclk ? id : out1;
+	assign oq = iclk ? oq : out1;
+   // always @ (posedge iclk)  
+   // begin 
+  // oq <= id;
+  // end
 endmodule
     `ifndef parameters
 `define  parameters
