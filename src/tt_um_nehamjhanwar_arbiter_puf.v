@@ -115,8 +115,8 @@ module dff(
     input iclk,
     output reg oq
     );
-    wire out1;
-	assign out1 = ~iclk ? id : out1;
+   // wire out1;
+	//assign out1 = ~iclk ? id : out1;
 	// Positive-edge-triggered flip-flop
 	always @(posedge iclk) begin
         oq <= id; // Update q on the rising edge of clk
